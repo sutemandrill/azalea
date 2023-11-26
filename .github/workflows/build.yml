@@ -1,4 +1,4 @@
-name: Build Azalea and Release
+name: Build SparxHacks and Release
 on:
   push:
   workflow_dispatch:
@@ -30,8 +30,8 @@ jobs:
         id: compress
         run: |
           mv dist/bundle.js .
-          mv dist Azalea-${{ steps.version.outputs.value }}
-          zip -r Azalea.zip Azalea-${{ steps.version.outputs.value }} & wait $!;
+          mv dist SparxHacks-${{ steps.version.outputs.value }}
+          zip -r SparxHacks.zip SparxHacks-${{ steps.version.outputs.value }} & wait $!;
 
       - name: Create release
         uses: softprops/action-gh-release@v1
@@ -39,7 +39,7 @@ jobs:
           token: "${{ secrets.GITHUB_TOKEN }}"
           prerelease: false
           tag_name: "${{ steps.version.outputs.value }}"
-          name: "Azalea ${{ steps.version.outputs.value }}"
+          name: "SparxHacks ${{ steps.version.outputs.value }}"
           files: |
             ./*.zip
             bundle.js
