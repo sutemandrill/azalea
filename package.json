@@ -1,8 +1,8 @@
 {
     "name": "azalea",
     "version": "1.0.0",
-    "repository": "https://github.com/acquitelol/azalea.git",
-    "author": "Rosie",
+    "repository": "https://github.com/sutemandrill/sparxhacks.git",
+    "author": "Sute",
     "scripts": {
         "build": "rollup -c --configPlugin esbuild",
         "watch": "pnpm build --watch"
@@ -17,14 +17,12 @@
         "@types/react": "^18.2.21",
         "@types/react-dom": "^18.2.7",
         "esbuild": "^0.18.13",
-        "javascript-obfuscator": "^4.1.0",
         "node": "^20.6.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "rollup": "^3.26.2",
         "rollup-plugin-commonjs": "^10.1.0",
         "rollup-plugin-esbuild": "^5.0.0",
-        "rollup-plugin-javascript-obfuscator": "^1.0.4",
         "rollup-plugin-typescript-paths": "^1.4.0",
         "spitroast": "^1.4.3",
         "typescript": "^5.1.6"

@@ -1,9 +1,9 @@
 {
-    "name": "Azalea",
+    "name": "Sparx Hacks",
     "version": "3.5.0",
     "description": "The cutest SparxMaths extension for Chromium ~!",
     "manifest_version": 3,
-    "author": "Rosie",
+    "author": "Sute",
 
     "icons": {
         "128": "assets/logo.png"
@@ -13,7 +13,7 @@
         "default_icon": {
             "128": "assets/logo.png"
         },
-        "default_title": "Azalea"
+        "default_title": "Sparx Hacks"
     },
 
     "permissions": [

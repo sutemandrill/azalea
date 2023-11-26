@@ -7,18 +7,6 @@ import { mkdirSync, existsSync } from 'fs';
 import json from '@rollup/plugin-json';
 import esbuild from 'rollup-plugin-esbuild';
 import commonjs from 'rollup-plugin-commonjs';
-import obfuscator, { ObfuscatorOptions } from 'javascript-obfuscator';
-
-const obfuscateCode = (options?: ObfuscatorOptions): Plugin => ({
-    name: 'javascript-obfuscator',
-    transform(code) {
-        const obfuscationResult = obfuscator.obfuscate(code, options);
-
-        return {
-            code: obfuscationResult.getObfuscatedCode()
-        };
-    }
-});
 
 const copyExtension = (): Plugin => ({
     name: 'copy-extension',
@@ -71,8 +59,7 @@ export default [
                 preserveExtensions: true,
                 nonRelative: process.platform === 'darwin' ? false : true
             }),
-            esbuild({ minify: true, target: 'ES2020' }),
-            obfuscateCode()
+            esbuild({ minify: false, target: 'ES2020' }),
         ]
     }),
     defineExtendedConfig({
@@ -92,8 +79,7 @@ export default [
                 preserveExtensions: true,
                 nonRelative: process.platform === 'darwin' ? false : true
             }),
-            esbuild({ minify: true, target: 'ES2020' }),
-            obfuscateCode()
+            esbuild({ minify: false, target: 'ES2020' }),
         ]
     }),
     defineExtendedConfig({
@@ -116,8 +102,7 @@ export default [
             nodeResolve(),
             commonjs(),
             json(),
-            esbuild({ minify: true, target: 'ES2020' }),
-            obfuscateCode(),
+            esbuild({ minify: false, target: 'ES2020' }),
             copyExtension()
         ]
     }),

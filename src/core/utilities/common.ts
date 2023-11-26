@@ -4,8 +4,8 @@ const { preferences } = storages;
 
 const name = {
     defaults: {
-        firstName: 'Rosie',
-        lastName: ':3'
+        firstName: 'Sute',
+        lastName: 'Mandrill'
     },
 
     get firstName() {
@@ -22,18 +22,18 @@ const name = {
 };
 
 const repository = {
-    user: 'https://github.com/acquitelol',
+    user: 'https://github.com/sutemandrill',
 
     get plain() {
-        return this.user + '/azalea';
+        return this.user + '/sparxhacks';
     },
 
-    hash: 'https://api.github.com/repos/acquitelol/azalea/git/refs/heads/sparx-v2',
-    download: 'https://github.com/acquitelol/azalea/releases/latest/download',
-    raw: 'https://raw.githubusercontent.com/acquitelol/azalea',
+    hash: 'https://api.github.com/repos/sutemandrill/sparxhacks/git/refs/heads/main',
+    download: 'https://github.com/sutemandrill/sparxhacks/releases/latest/download',
+    raw: 'https://raw.githubusercontent.com/sutemandrill/sparxhacks',
 };
 
-const getImage = (name: string) => `${repository.raw}/sparx-v2/extension/assets/${name}`;
+const getImage = (name: string) => `${repository.raw}/main/extension/assets/${name}`;
 const getFile = (name: string) => `${repository.download}/${name}`;
 const capitalize = (s: string) => s.trim().replace(/^\w/, m => m.toUpperCase());
 const noop = () => { };
